@@ -1,7 +1,7 @@
 %global checkout 20121218git16395d8
 Name:           libshairport
 Version:        1.2.1
-Release:        5.%{checkout}%{?dist}
+Release:        6.%{checkout}%{?dist}
 Summary:        Emulates an AirPort Express
 Group:          System Environment/Libraries
 
@@ -69,6 +69,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Thu Mar 01 2018 RPM Fusion Release Engineering <leigh123linux@googlemail.com> - 1.2.1-6.20121218git16395d8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 1.2.1-5.20121218git16395d8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
