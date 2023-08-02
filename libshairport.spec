@@ -1,7 +1,7 @@
 %global checkout 20121218git16395d8
 Name:           libshairport
 Version:        1.2.1
-Release:        15.%{checkout}%{?dist}
+Release:        16.%{checkout}%{?dist}
 Summary:        Emulates an AirPort Express
 Group:          System Environment/Libraries
 
@@ -69,6 +69,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Wed Aug 02 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.2.1-16.20121218git16395d8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.2.1-15.20121218git16395d8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
