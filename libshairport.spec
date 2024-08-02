@@ -40,7 +40,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q -n %{name}-%{version}.%{checkout}
-%patch0
+%patch -P0
 
 
 %build
