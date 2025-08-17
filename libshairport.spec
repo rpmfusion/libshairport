@@ -1,7 +1,7 @@
 %global checkout 20121218git16395d8
 Name:           libshairport
 Version:        1.2.1
-Release:        20.%{checkout}%{?dist}
+Release:        21.%{checkout}%{?dist}
 Summary:        Emulates an AirPort Express
 Group:          System Environment/Libraries
 
@@ -14,6 +14,8 @@ Source0:        %{name}-%{version}.%{checkout}.tar.gz
 Source1:        libshairport-generate-tarball-gz.sh
 # This patch remove unnecessary libssl link, it has been proposed to upstream (https://github.com/amejia1/libshairport/pull/3)
 Patch0:         libshairport-remove-libssl-link.patch
+# Support C23 -Wincompatible-pointer-types
+Patch1:         libshairport-c23-function-prototype.patch
 
 BuildRequires:  libao-devel
 BuildRequires:  openssl-devel
@@ -41,6 +43,7 @@ developing applications that use %{name}.
 %prep
 %setup -q -n %{name}-%{version}.%{checkout}
 %patch -P0
+%patch -P1 -p1
 
 
 %build
@@ -69,6 +72,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 
 %changelog
+* Sun Aug 17 2025 Mamoru TASAKA <mtasaka@fedoraproject.org> - 1.2.1-21.20121218git16395d8
+- Support C23 function prototype
+
 * Sun Jul 27 2025 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.2.1-20.20121218git16395d8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_43_Mass_Rebuild
 
